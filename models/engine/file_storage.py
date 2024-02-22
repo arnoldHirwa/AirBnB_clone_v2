@@ -17,15 +17,15 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
-        dic = {}
+        dict = {}
         if cls:
             dictionary = self.__objects
             for key in dictionary:
-                partition = key.replace('.', ' ')
-                partition = shlex.split(partition)
-                if (partition[0] == cls.__name__):
-                    dic[key] = self.__objects[key]
-            return (dic)
+                part = key.replace('.', ' ')
+                part = shlex.split(part)
+                if (part[0] == cls.__name__):
+                    dict[key] = self.__objects[key]
+            return (dict)
         else:
             return self.__objects
 
